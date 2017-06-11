@@ -8,8 +8,8 @@ var appEnv = cfenv.getAppEnv(); //ADICIONADO PARA TRABALHAR COM AMBIENTE BLUEMIX
 var ConversationV1 = require('watson-developer-cloud/conversation/v1');
 
 var conversation = new ConversationV1({
-    username: 'ccfc5008-2003-45e8-8f40-1d3b90e65b1c',
-    password: 'tj3Jo2Ag582r',
+    username: 'ADICIONE AQUI O USERNAME',
+    password: 'ADICIONE AQUI O TOKEN',
     version_date: ConversationV1.VERSION_DATE_2017_04_21
 });
 
@@ -38,7 +38,7 @@ app.get('/msg', function (req, res) {
         },
 
         context: contexto,
-        workspace_id: '88e2a403-0aaa-4ba0-a1cd-2f6d17d738c5'
+        workspace_id: 'ADICIONE AQUI O WORKSPACE'
     }, function (err, response) {
         if (err) {
             console.error(err);
