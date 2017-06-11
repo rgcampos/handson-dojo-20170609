@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
-var cfenv = require('cfenv');
-var appEnv = cfenv.getAppEnv();
+
+var cfenv = require('cfenv'); //ADICIONADO PARA TRABALHAR COM AMBIENTE BLUEMIX
+var appEnv = cfenv.getAppEnv(); //ADICIONADO PARA TRABALHAR COM AMBIENTE BLUEMIX
 
 
 var ConversationV1 = require('watson-developer-cloud/conversation/v1');
@@ -50,10 +51,12 @@ app.get('/msg', function (req, res) {
 });
 
 
+//ANTES ESTAVA ASSIM
 // var server = app.listen(3000);
 // console.log('Servidor Express iniciado na porta %s', server.address().port);
 
+//AGORA ESTA ASSIM
+//ADICIONADO PARA TRABALHAR COM AMBIENTE BLUEMIX
 app.listen(appEnv.port, '0.0.0.0', function() {
-  // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
